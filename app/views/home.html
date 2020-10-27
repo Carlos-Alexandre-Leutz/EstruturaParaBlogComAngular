@@ -1,0 +1,29 @@
+<!-- home.html -->
+<div>
+    <h1>Home</h1>
+    <p>{{title}}</p>
+</div>
+
+<h1>
+    Index
+</h1>
+
+<a href link-atributo="/angular 2 completo js/arquivos/conteudo1.html">conteudo1</a>
+<a href="https://formidableforms.com/knowledgebase/javascript-examples/javascript-after-form-submit/">link</a>
+<section id="conteudo">
+
+</section>
+<script>
+    document.querySelectorAll('[link-atributo]').forEach(link => { //a
+        link.onclick = function(e) {
+            e.preventDefault()
+            console.log('foi')
+            fetch(link.getAttribute('link-atributo')) //href
+                .then(resp => resp.text())
+                .then(html => conteudo.innerHTML = html)
+
+
+        }
+
+    });
+</script>
